@@ -22,7 +22,8 @@ class AtomicClusterLJ(BaseSystem):
     """
 
     def get_potential(self, eps, sig, boxl = None):
-        return LJ(self.natoms, eps=eps, sig=sig, boxl = boxl)
+        # return LJ(self.natoms, sig=sig, boxl = boxl)
+        return LJ(eps, sig, boxl=boxl)
 
     def get_random_configuration(self):
         coords = np.random.uniform(-1, 1, [3 * self.natoms]) * \
