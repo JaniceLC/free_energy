@@ -17,8 +17,8 @@ def main():
     system=WaterCluster(nmol)
     print system.get_masses()
     print system.get_permlist()
-    print system.getpotential()
-    print system.getpotential(eps=0.1550, sig =3.1536 )
+    print system.get_potential()
+    print system.get_potential(eps=0.1550, sig =3.1536 )
 
 if __name__=="__main__":
     main()
