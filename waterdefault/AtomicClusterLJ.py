@@ -21,7 +21,7 @@ class AtomicClusterLJ(BaseSystem):
     symmetry.
     """
 
-    def get_potential(self, eps =1, sig=1, boxl = None):
+    def get_potential(self, eps, sig, boxl = None):
         return LJ(self.natoms, eps=eps, sig=sig, boxl = boxl)
 
     def get_random_configuration(self):
