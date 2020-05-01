@@ -23,7 +23,7 @@ from pele.mindist._minpermdist_policies import MeasureAtomicCluster, TransformAt
 from pele.mindist.permutational_alignment import _make_cost_matrix, _find_permutations, find_permutations_hungarian
 from pele.mindist import MinPermDistCluster, ExactMatchCluster
 # from pele.systems import AtomicCluster
-from .AtomicClusterLJ import AtomicClusterLJ
+from AtomicClusterLJ import AtomicClusterLJ
 from copy import deepcopy
 import numpy as np
 from pele.utils.elements import elements
