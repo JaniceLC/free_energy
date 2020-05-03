@@ -66,7 +66,7 @@ class TIP4PSystem(RBSystem):
         for i in xrange(self.nrigid):
             self.draw_bonds.append((3*i, 3*i+1))
             self.draw_bonds.append((3*i, 3*i+2))
-        return system
+        return rbsystem
 
     def get_potential(self):
         return self.potential
