@@ -54,13 +54,13 @@ class TIP4PSystem(RBSystem):
         g_n = rbpot.NumericalDerivative(rbcoords.coords, eps=1e-4)
         cg = rbsystem.coords_adapter(g-g_n)
 
-        coords = rbpot.getCoords()
-        nrigid = coords.size / 6
+        # coords = rbpot.getCoords()
+        nrigid = rbcoords.size / 6
         print "nrigid", nrigid
         self.potential = rbpot
         self.nrigid = nrigid
         self.render_scale = 0.3
-        self.atom_types = system.get_atomtypes()
+        self.atom_types = rbsystem.get_atomtypes()
 
         self.draw_bonds = []
         for i in xrange(nrigid):
