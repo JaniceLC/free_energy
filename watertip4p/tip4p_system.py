@@ -63,7 +63,7 @@ class TIP4PSystem(RBSystem):
         self.atom_types = rbsystem.get_atomtypes()
 
         self.draw_bonds = []
-        for i in xrange(nrigid):
+        for i in xrange(self.nrigid):
             self.draw_bonds.append((3*i, 3*i+1))
             self.draw_bonds.append((3*i, 3*i+2))
         return system
