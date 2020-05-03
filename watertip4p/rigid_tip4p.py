@@ -38,7 +38,7 @@ for site, com in zip(rbsystem.sites, rbcoords.posRigid):
     com[:] = ref.coords[site.indices[0]] - site.atom_positions[0]
 
 # for simplicity just use a lj potential here
-pot = LJ(sigma=2.)
+pot = LJ(eps=0.1550, sig=3.1536)
 # get the flattened coordinate array
 print pot.getEnergy(ref.coords.flatten())
 rbpot = rigidbody.RBPotentialWrapper(rbsystem, pot)
