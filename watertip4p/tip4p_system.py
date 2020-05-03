@@ -55,10 +55,10 @@ class TIP4PSystem(RBSystem):
         cg = rbsystem.coords_adapter(g-g_n)
 
         # coords = rbpot.getCoords()
-        nrigid = rbcoords.size / 6
-        print "nrigid", nrigid
+        # nrigid = rbcoords.size / 6
+        # print "nrigid", nrigid
         self.potential = rbpot
-        self.nrigid = nrigid
+        self.nrigid = len(rbsystem.sites)
         self.render_scale = 0.3
         self.atom_types = rbsystem.get_atomtypes()
 
