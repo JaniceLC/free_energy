@@ -34,8 +34,8 @@ def water(xyzfile): # TIP4P-16.xyz"
 
 class TIP4PSystem(RBSystem):
     def __init__(self, xyzfile):
-        RBSystem.__init__(self)
         self.xyzfile = xyzfile
+        RBSystem.__init__(self)
     def setup_aatopology(self):
         water_sites, ref = water(self.xyzfile)
         rbsystem = RBTopology()
