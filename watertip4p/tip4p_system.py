@@ -40,6 +40,7 @@ class TIP4PSystem(RBSystem):
         water_sites, ref = water(self.xyzfile)
         rbsystem = RBTopology()
         rbsystem.add_sites(water_sites)
+        rbsystem.finalize_setup()
         #print len(rbsystem.sites), len(rbsystem.indices)
         print "I have %d water molecules in the system" % len(rbsystem.sites)
         rbcoords = rbsystem.coords_adapter(np.zeros(len(rbsystem.sites)*6))
@@ -61,11 +62,13 @@ class TIP4PSystem(RBSystem):
         self.nrigid = len(rbsystem.sites)
         self.render_scale = 0.3
         self.atom_types = rbsystem.get_atomtypes()
-
+rbsystem.finalize_setup()
         self.draw_bonds = []
         for i in xrange(self.nrigid):
             self.draw_bonds.append((3*i, 3*i+1))
             self.draw_bonds.append((3*i, 3*i+2))
+        rbsystem.finalize_setup()
+        print "final!"
         return rbsystem
 
     def get_potential(self):
