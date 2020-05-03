@@ -30,7 +30,7 @@ def water(xyzfile): # TIP4P-16.xyz"
 # finalize the rigid body setup
     for rb in rb_sites:
         rb.finalize_setup()
-    return water, ref 
+    return rb, ref 
 
 class TIP4PSystem(RBSystem):
     def __init__(self, xyzfile):
