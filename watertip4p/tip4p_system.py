@@ -44,7 +44,7 @@ class TIP4PSystem(RBSystem):
         print "I have %d water molecules in the system" % len(rbsystem.sites)
         rbcoords = rbsystem.coords_adapter(np.zeros(len(rbsystem.sites)*6))
         for site, com in zip(rbsystem.sites, rbcoords.posRigid):
-            com[:] = ref.coords[site.indices[0]] - site.atom_positions[0]
+            com[:] = ref.coords[site.atom_indices[0]] - site.atom_positions[0]
         pot = LJ(eps=0.1550, sig=3.1536)
         # get the flattened coordinate array
         print "The initial energy is", pot.getEnergy(ref.coords.flatten())
